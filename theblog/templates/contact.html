@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title%}
+Contact Us
+{% endblock %}
+{% block content %}
+
+<h2><font face = "Noe">Query section</h2>
+ 
+ <form method = "POST" action = "{% url 'contact' %}">
+ 	{% csrf_token %}
+ 	<div class= "container-fluid">
+	<div  class="form-group" >
+			<label for="exampleFormControlInput1" >Enter your name </label>
+  		<input type="text" class="form-control" note_id = "name" name = "name" placeholder="Full name if possible">
+  	</div>
+	<div class= "row">
+		 <div class="form-group" >
+			<label for="exampleFormControlInput1">Give a contact detail</label>
+  		<input type="text" class="form-control" note_id = "contact"name = "contact" placeholder="A phone number or an email">
+  	</div>
+	<div class="form-group" >
+			<label for="exampleFormControlTextarea1">Ask your query regarding the web page.</label>
+  		<textarea type="text" class="form-control"  note_id = "query" name = "query" placeholder="Query..."></textarea>
+  	</div>
+	 
+
+
+	 <hr></hr>
+ 
+ <div class= "form-group">	
+	<button type="submit" class="btn btn-primary " style = "margin: 0 auto;
+    display: block;" href = "{% url 'contact' %}">Submit</button>
+ </div>	
+</div>
+ 
+</form>
+
+{% endblock %}

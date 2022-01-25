@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% block title%} Form Page{% endblock %}
+{% block content %}
+<h1>Explore what field is the most suitable for your skillset!</h1>
+
+	<form method = "POST" action = "{% url 'submitmyform' %}">
+   {% csrf_token %}
+   {% if user.is_authenticated %}
+	   <div class= "container-fluid">
+			<!--div class="input-group">
+  			<span class="input-group-text">First and last name</span>
+  			<input type="text" class="form-control" id="input-group-text" name = "FRN">
+  			<input type="text" class="form-control" id="input-group-text" name = "LSN">
+			</div-->
+		 <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput" >Your marks of class 10th</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "TEN" placeholder="Enter your percentage marks here">
+  	 </div>
+    </div>
+		<div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Your marks of class 12th</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "TWE" placeholder="Enter your percentage marks here">
+  	 </div>
+    </div>
+		<div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Gender</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "GEN" placeholder="Enter 0 for male and 1 for female">
+  	 </div>
+    </div>
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Your Sports caliber</label>
+			<li>1 for poor</li>
+			<li>2 for bad</li>
+			<li>3 for decent</li>
+			<li>4 for great</li>
+			<li>5 for excellent</li>
+  		<input type="number" class="form-control" id="floatingInput1" name = "SPO" placeholder="Enter any value between 1 to 5">
+  	 </div>
+    </div>
+	 
+    	<div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Better at what kind of sports?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "INOU" placeholder="0 for neither, 1 for indoor, 2 for outdoor">
+  	 </div>
+    </div>
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Were you good at dancing?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "DNC" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">How good of a student teachers considered you?</label>
+			<li>1 for poor</li>
+			<li>2 for bad</li>
+			<li>3 for decent</li>
+			<li>4 for great</li>
+			<li>5 for excellent</li>
+  		<input type="number" class="form-control" id="floatingInput1" name = "GOOD" placeholder="Enter any value between 1 to 5">
+  	 </div>
+    </div>
+    
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Were you good at painting/drawing?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "ART" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Were you good at singing/instrument playing?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "MUS" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Did you learnt classical music or western music?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "WECL" placeholder="0 for classical 1 for western">
+  	 </div>
+    </div>
+    <div class= "row">
+		 <div class="w-25 p-3" class="form-floating " >
+			<label for="floatingInput">Do you used to take part in college/school festivals?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "FEST" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput">Do you used to take part in speeches/debates etc.?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "SPDB" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    
+     <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput">Were you into gaming during your school/colleges years?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "GCY" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput">Were your parents strict regarding your studies/future?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "SPSF" placeholder="0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput">What was your general class rankings?</label>
+			<li>1- Bottom 50%,</li>
+			<li>2-Average,</li>
+			<li>3- Above average,</li>
+			<li>4-Top 10,</li>
+			<li>5- Top 5</li>
+  		<input type="number" class="form-control" id="floatingInput1" name = "CLR" placeholder="Enter any value between 1 to 5">
+  	 </div>
+    </div>
+   <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput"> Were you introverted or extroverted during school/college years?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "PERS" placeholder="Enter 0 for introverted 1 for extroverted">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput"> Did you took parts in Olympiads/Scholarships in schools?</label>
+  		<input type="number" class="form-control" id="floatingInput1" name = "OLSC" placeholder="Enter 0 for no 1 for yes">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput"> If yes then how good you usually used to score in such exams?</label>
+			<li>1-Usually failed in such exams,</li>
+			<li>2-Greater than 40%,</li>
+			<li>3-Greater than 75%,</li>
+			<li>4-Greater than 90%,</li>
+			<li>5-Greater than 95%</li>
+  		<input type="number" class="form-control" id="floatingInput1" name = "OLSCMAR" placeholder="Enter any value between 1 to 5">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput"> How good you were at essay writings in school years?</label>
+			<li>1-Poor</li>
+			<li>2-Average</li>
+			<li>3-Decent</li>
+			<li>4-Great</li>
+			<li>5-Excellent</li>
+  		<input type="number" class="form-control" id="floatingInput1" name = "ESWRIT" placeholder="Enter any value between 1 to 5">
+  	 </div>
+    </div>
+    <div class= "row ">
+		 <div class="w-25 p-3 " class="form-floating " >
+			<label for="floatingInput"> How often you were school's prefect, class monitor, head boy/girl, house captain etc.?</label>
+			<li>1-Never</li>
+			<li>2-Only once</li>
+			<li>3-Only twice</li>
+			<li>4-Almost every year,</li>
+			<li>5-Every year</li>
+  		<input type="number" class="form-control" id="floatingInput1" name = "CMHBG" placeholder="Enter any value between 1 to 5">
+  	 </div>
+    </div>
+<!--br></br-->
+  <!--label for="floatingInput"></label>
+  <label for="floatingInput"></label>
+  <label for="floatingInput">Networking</label>
+  
+  <label for="floatingInput">Programming Skills</label>
+  <label for="floatingInput">AI ML</label>
+  <label for="floatingInput">Software Engineering</label>
+  <label for="floatingInput">Business Analysis</label>
+  <label for="floatingInput">Data Science</label>
+  <label for="floatingInput">Graphics Designing</label-->
+
+	 <!--div class= "row">
+		<div class="w-25 p-3" class="form-floating ">
+  			<input type="number" class="form-control" id="floatingInput1" placeholder="Enter your percentage marks here">
+  			<label for="floatingInput1" value = {{temp.COA}}>Computer Architecture</label>
+		</div>
+	 </div-->
+<!--br></br-->
+	 <!--div class= "row">
+		  <div class="w-25 p-3" class="form-floating ">
+  			<input type="number" class="form-control" id="floatingInput2" placeholder="Enter your percentage marks here">
+  			<label for="floatingInput2" value = {{temp.DCS}}>Distributed Computing Systems</label>
+		</div>
+	 </div-->	
+	 {% else %}
+	 <p>Please log in to your account to take the test.</p>
+	 {% endif %}
+
+	 <hr></hr>
+	 <div class= "form-group">	
+		<button type="submit" class="btn btn-primary " style = "margin: 0 auto;
+    display: block;" href = "{% url 'submitmyform' %}">Submit</button>
+	 </div>	
+	</form>
+</div>
+{% endblock %}
+
+<!--p>Decorating the "take your test here! form"</p-->

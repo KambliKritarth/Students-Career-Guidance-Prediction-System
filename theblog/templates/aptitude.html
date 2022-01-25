@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title%} Take your aptitude score{% endblock %}
+{% block content %}
+<p><font face = "Noe" size = 5>Chose what branch you want to have an aptitude test.</font></p>
+{% if user.is_authenticated %}
+<ol>
+	<li><a href = "{% url 'aptitude_cse' %}"><font face = "Noe" size = 4>Take aptitutde tests in Science subjects!</font></a></li>
+</ol>
+{% else %}
+<p>Please log in to your account to take the aptitude tests.</p>
+{% endif %}
+<!--iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeGxUc_0enKggUwo1sISL-zYLRbA2kkUj4NLRn8HY11gslqLw/viewform?embedded=true" width="640" height="494" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe-->
+{% endblock %}

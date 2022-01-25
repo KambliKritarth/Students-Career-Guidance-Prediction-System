@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block title%}
+{{post.title_tag}}
+{% endblock %}
+{% block content %}
+
+
+
+<h1>{{post.title}}</h1>
+
+
+<small>By : {{post.author.first_name}} {{post.author.last_name}}</small><br/>
+<hr>
+<br/>
+{% if user.is_authenticated %}
+{{post.body}}
+{% else %}
+<p>Please log in to your account to read the article.</p>
+{% endif %}
+<br><br/>
+<!--h2>Queries</h2>
+
+{% if not post.comments.all %}
+
+No queries yet..<a href = "{% url 'add_query' post.pk%}">Add one </a>
+
+{% else %}
+{% for comment in post.comments.all %}
+
+<strong>{{comment.name}}-{{comment.date_added}}</strong>
+
+<br>
+    
+    
+</br>
+
+{{comment.body}}
+
+{% endfor %}
+
+
+{% endif %}
+
+
+<br></br>
+<a href="{% url 'add_query' post.pk%}">Add query</a-->
+
+
+
+ {% endblock %}
+
+ <!--p>This program is for the interior of links in home page. </p-->
