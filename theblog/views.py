@@ -31,8 +31,6 @@ def getPredictions(Tenthmarks, Twelfthmarks, Gender, Sports, Indo, Danc, Teach, 
     
     model = pickle.load(open("careerguide.sav","rb"))
     scaled = pickle.load(open("careerguidescaler.sav","rb"))
-    #prediction = model.predict(scaled.transform([[Tenthmarks, Twelfthmarks, Gender, Sports, Indo, Danc, Teach, Art, Sing, WestClass, Fest, Speech, Gam, Strict, ClassR, Pers, Oly, OlyMar, Head]]))
-    sample_set = {"Software Engineer", "Investment Banker", "Consultant", "Product Designer","Financial Accountant","Bank Engineer","Jr. College Professor","Physiotherapist","Civil Engineer","Architect","Orthodontist","Sales Manager"}
     prediction = random.choice(tuple(sample_set))
     return prediction
 
