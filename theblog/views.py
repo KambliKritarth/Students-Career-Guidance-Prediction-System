@@ -44,9 +44,9 @@ def submitmyform(request):
     result =getPredictions(request.POST.get('Tenthmarks',0) , request.POST.get('Twelfthmarks',0), request.POST.get('Gender',0) , request.POST.get('Sports',0) ,request.POST.get('Indo',0) , request.POST.get('Danc',0), request.POST.get('Teach',0), request.POST.get('Art',0), request.POST.get('Sing',0), request.POST.get('WestClass',0), request.POST.get('Fest',0), request.POST.get('Speech',0), request.POST.get('Gam',0), request.POST.get('Strict',0), request.POST.get('ClassR',0),request.POST.get('Pers',0), request.POST.get('Oly',0), request.POST.get('OlyMar',0), request.POST.get('Head',0))
     sample_set = {"Software Engineer", "Investment Banker", "Consultant", "Product Designer","Financial Accountant","Bank Engineer","Jr. College Professor","Physiotherapist","Civil Engineer","Architect","Orthodontist","Sales Manager"}
    
-    '''ins = Score( result, DataBaseF, CA, DCS, Net, SoftWD, ProgSkills, AIML, SWE, BusinessAnalysis, DataScience, GraphDesign)
+    ins = Score( result, DataBaseF, CA, DCS, Net, SoftWD, ProgSkills, AIML, SWE, BusinessAnalysis, DataScience, GraphDesign)
 
-    ins.save()'''
+    ins.save()
     print(result)
     return render(request,'submitmyform.html',{'submitmyform':result})
     #print(result)
