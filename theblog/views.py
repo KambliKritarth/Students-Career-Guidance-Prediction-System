@@ -7,7 +7,7 @@ from .forms import InputForm
 from django.http import JsonResponse
 from theblog.models import Score, Comment, Contact
 import pickle
-import random
+#import random
 # Create your views here.
 #def home(request):
     #return render(request,'home.html',{})
