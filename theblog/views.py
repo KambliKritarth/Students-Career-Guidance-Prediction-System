@@ -47,7 +47,7 @@ def submitmyform(request):
     ins = Score( result, DataBaseF, CA, DCS, Net, SoftWD, ProgSkills, AIML, SWE, BusinessAnalysis, DataScience, GraphDesign)
 
     ins.save()
-    print(result)
+    #print(result)
     return render(request,'submitmyform.html',{'submitmyform':result})
     #print(result)
     #{'result':result}
