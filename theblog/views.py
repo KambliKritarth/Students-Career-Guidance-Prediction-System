@@ -31,7 +31,6 @@ def getPredictions(Tenthmarks, Twelfthmarks, Gender, Sports, Indo, Danc, Teach, 
     
     model = pickle.load(open("careerguide.sav","rb"))
     scaled = pickle.load(open("careerguidescaler.sav","rb"))
-    prediction = random.choice(tuple(sample_set))
     return prediction
 
 def submitmyform(request):
