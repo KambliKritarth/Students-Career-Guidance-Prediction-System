@@ -11,3 +11,7 @@ We used "Google forms" as a method to survey all the data necessary for building
 First the dataset is loaded for the exploratory data analysis.
 
 ![image](https://user-images.githubusercontent.com/74850840/177775184-2411bf9a-f8d2-4e46-8ad2-cb5c3c3a6056.png)
+
+## OneHot Encoding 
+
+Before proceeding without the unpreprocessed dataset, we need to make sure all the features of the dataset has common formatting in data types. 
